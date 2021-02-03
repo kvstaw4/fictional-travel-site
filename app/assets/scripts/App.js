@@ -18,7 +18,7 @@ let mobileMenu = new MobileMenu();
      el.addEventListener('click', e => {
          e.preventDefault()
          if (typeof modal == 'undefined') {
-            import('./modules/Modal').then(x => {
+            import(/* webpackChunkName: "modal" */ './modules/Modal').then(x => {
                 modal = new x.default()
                 setTimeout(() => modal.openTheModal(), 20)
             }).catch(() => console.log('There was a problem'))
